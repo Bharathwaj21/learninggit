@@ -1,0 +1,37 @@
+6-band fused TIFF
+(R,G,B,NIR,VV,VH)
+        ↓
+Read bands using GDAL
+        ↓
+Feature Extraction
+    - NDWI
+    - NDVI
+    - Brightness
+    - Optical edge magnitude
+    - VV/VH ratio
+    - VV-VH difference
+    - VV variance
+    - VH variance
+        ↓
+Feature-Level Fusion
+    - create 14-feature vector per pixel
+        ↓
+Water Mask
+    - NDWI threshold
+        ↓
+Tensor / Sample Generation
+    - only for water pixels
+        ↓
+K-Means Clustering
+        ↓
+Cluster Map
+        ↓
+Select object cluster
+        ↓
+Morphology
+        ↓
+Connected Components
+        ↓
+Bounding Boxes
+        ↓
+Maritime Object Detection Output.
